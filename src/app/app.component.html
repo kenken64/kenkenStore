@@ -1,0 +1,172 @@
+<div fxLayout="column" fxLayoutAlign="start right" fxLayoutGap="60px">
+  <div>
+    <app-header></app-header>
+  </div>
+  <div>
+    <ngx-newsticker title="What the fact :" [events]="eventList" [showCounter]="false"></ngx-newsticker>
+    <mat-horizontal-stepper #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Shop</ng-template>
+
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start center" fxLayoutGap="20px">
+            <div fxFlex="33" fxFlex.xs="15">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                      <div mat-card-avatar class="example-header-image"></div>
+                      <mat-card-title><b>Pokka Olong Tea</b></mat-card-title>
+                      <mat-card-subtitle>1.5L</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRO7rx3XJnhrisZ932_D9pzC3Oebzj7PKe9Ic-WgAjsz-YZhR7GvDvtenELHQjLuQuQBaVMt9_0qp2B7kMDFmkp1rw5Y8Q44MM2mVpbwcgK-4U17JkUlPrW&usqp=CAE" alt="Photo of a Shiba Inu">
+                    <mat-card-content>
+                      <p>
+                      Pokka No Sugar Oolong Tea is real brewed with selected premium tea leaves and contains absolutely no sugar, preservatives, or coloring, offering you the ultimate healthy enjoyment.
+                      </p>
+                    </mat-card-content>
+                    <mat-card-actions align="center">
+                        <button mat-icon-button mat-raised-button color="primary">
+                            <mat-icon aria-label="Example icon-button with a add icon">add_shopping_cart</mat-icon>
+                        </button>
+                        <span>&nbsp;</span>
+                        <mat-form-field>
+                            <mat-select formControlName="quantity1" value="1">
+                                <mat-option value="1">1</mat-option>
+                                <mat-option value="2">2</mat-option>
+                                <mat-option value="3">3</mat-option>
+                                <mat-option value="4">4</mat-option>
+                                <mat-option value="5">5</mat-option>
+                                <mat-option value="6">6</mat-option>
+                                <mat-option value="7">7</mat-option>
+                                <mat-option value="8">8</mat-option>
+                                <mat-option value="9">9</mat-option>
+                                <mat-option value="10">10</mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                    </mat-card-actions>
+                  </mat-card>
+            </div>
+            <div fxFlexOrder.xs="1" fxFlex.xs="15" fxFlex="33">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                      <div mat-card-avatar class="example-header-image"></div>
+                      <mat-card-title><b>Da Hong Pao Olong Tea</b></mat-card-title>
+                      <mat-card-subtitle>1.5L</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image src="data:image/jpeg;base64,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" alt="Photo of a Shiba Inu">
+                    <mat-card-content>
+                      <p>
+                        Authentic Tea House Oolong Tea is real brewed with selected premium tea leaves and contains absolutely no sugar, preservatives, or coloring, offering you the ultimate healthy enjoyment.
+                      </p>
+                    </mat-card-content>
+                    <mat-card-actions align="center">
+                        <button mat-icon-button mat-raised-button color="primary">
+                            <mat-icon aria-label="Example icon-button with a add icon">add_shopping_cart</mat-icon>
+                        </button>
+                        <span>&nbsp;</span>
+                        <mat-form-field>
+                            <mat-select formControlName="quantity2" value="1">
+                                <mat-option value="1">1</mat-option>
+                                <mat-option value="2">2</mat-option>
+                                <mat-option value="3">3</mat-option>
+                                <mat-option value="4">4</mat-option>
+                                <mat-option value="5">5</mat-option>
+                                <mat-option value="6">6</mat-option>
+                                <mat-option value="7">7</mat-option>
+                                <mat-option value="8">8</mat-option>
+                                <mat-option value="9">9</mat-option>
+                                <mat-option value="10">10</mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                    </mat-card-actions>
+                  </mat-card>
+            </div>
+            <div fxFlex="33" fxFlex.xs="15">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                      <div mat-card-avatar class="example-header-image"></div>
+                      <mat-card-title><b>Ayataka Green Tea</b></mat-card-title>
+                      <mat-card-subtitle>1.5L</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image src="https://s3-ap-southeast-1.amazonaws.com/media.redmart.com/newmedia/460x/i/m/img_1535034787724.jpg" alt="Photo of a Shiba Inu">
+                    <mat-card-content>
+                      <p>
+                        Authentic Tea House Ayataka Japanese Green Tea is real brewed with selected premium tea leaves and contains absolutely no sugar, preservatives, or coloring, offering you the ultimate healthy enjoyment.
+                      </p>
+                    </mat-card-content>
+                    <mat-card-actions align="center">
+                        <button mat-icon-button mat-raised-button color="primary">
+                            <mat-icon aria-label="Example icon-button with a add icon">add_shopping_cart</mat-icon>
+                        </button>
+                        <span>&nbsp;</span>
+                        <mat-form-field>
+                            <mat-select formControlName="quantity3" value="1">
+                                <mat-option value="1">1</mat-option>
+                                <mat-option value="2">2</mat-option>
+                                <mat-option value="3">3</mat-option>
+                                <mat-option value="4">4</mat-option>
+                                <mat-option value="5">5</mat-option>
+                                <mat-option value="6">6</mat-option>
+                                <mat-option value="7">7</mat-option>
+                                <mat-option value="8">8</mat-option>
+                                <mat-option value="9">9</mat-option>
+                                <mat-option value="10">10</mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                    </mat-card-actions>
+                  </mat-card>
+            </div>
+          </div>
+          <div>
+            <br><hr><br>
+          </div>
+          <div>
+            <button mat-button matStepperNext mat-raised-button color="warn">Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup" class="example-form">
+          <ng-template matStepLabel>Fill out your address</ng-template>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Blk No." formControlName="blkNoCtrl" required>
+          </mat-form-field >
+          <mat-form-field class="example-full-width">
+              <input matInput placeholder="Level" formControlName="levelCtrl" required>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+              <input matInput placeholder="Unit No." formControlName="unitNoCtrl" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious mat-raised-button color="warn">Back</button>
+            <span>&nbsp;</span>
+            <button mat-button matStepperNext mat-raised-button color="warn">Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Checkout</ng-template>
+        You are now done.
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+      </mat-step>
+      <mat-step>
+          <ng-template matStepLabel>Pay</ng-template>
+          You are now done.
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+          </div>
+      </mat-step>
+      <mat-step>
+          <ng-template matStepLabel>Delivery</ng-template>
+          You are now done.
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+          </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+</div>
